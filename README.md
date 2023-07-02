@@ -1,1 +1,15 @@
-# validator
+cascadiad tx staking create-validator \
+--moniker="$VALIDATOR" \
+--amount=1000000000000000000aCC \
+--pubkey=$(cascadiad tendermint show-validator) \
+--chain-id=$CHAIN_ID \
+--commission-max-change-rate=0.01 \
+--commission-max-rate=0.20 \
+--commission-rate=0.10 \
+--min-self-delegation=1 \
+--from=wallet \
+--gas "auto" \
+--gas-adjustment=1.2 \
+--gas-prices="7aCC" \
+--broadcast-mode block \
+--yes 
